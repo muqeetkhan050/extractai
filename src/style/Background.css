@@ -1,0 +1,12 @@
+.Background {
+  height: 100vh;  /* full screen */
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    black 0%,
+    #0b0026 30%,  /* deep blue/purple */
+    #2d0a5c 60%,  /* dark violet */
+    #8a0035 85%,  /* dark red/pink */
+    #d6003d 100%  /* red/magenta */
+  );
+}
