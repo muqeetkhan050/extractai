@@ -1,5 +1,5 @@
 .Background {
-  height: 100vh;  /* full screen */
+  height: 100vh; /* full screen */
   width: 100%;
   background: linear-gradient(
     to bottom,
@@ -9,4 +9,22 @@
     #8a0035 85%,  /* dark red/pink */
     #d6003d 100%  /* red/magenta */
   );
+  position: relative; /* needed for absolute front content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FrontContent {
+  position: relative;
+  z-index: 10; /* make sure it's on top */
+  background-color: rgba(255, 255, 255, 0.08); /* more transparent */
+  padding: 40px 60px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 24px;
+  color: #fff; /* white text looks better on blurred background */
+  backdrop-filter: blur(5px); /* blur the background behind the box */
+  -webkit-backdrop-filter: blur(5px); /* for Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border for glass effect */
 }
