@@ -7,6 +7,13 @@ const Text = () => {
     const [extractedText, setExtractedText] = useState("")
     const [loading, setLoading] = useState(false)
     const [Progress, setProgress] = useState(0)
+
+    const handleUpload=(e)=>{
+        const file=e.target.file[0]
+        setImage(URL.createObjectURL(file))
+        setExtractedText("Extracting text...")
+        setLoading(true)
+    }
     return (
         <div>
             <div className="literata">
@@ -15,7 +22,7 @@ const Text = () => {
                 Print('Paste,wait,COpy')
 
             </div>
-            <input type='file'></input>
+            <input type='file' onClick={handleUpload}></input>
             <button >
                 Get Started
             </button>
