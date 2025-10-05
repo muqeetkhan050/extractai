@@ -7,7 +7,7 @@ const Main=()=>{
             <Header />
             <BackPage />
             <Footer />
-            <Completed/>
+         
 
         </div>
     )
