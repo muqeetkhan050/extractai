@@ -1,4 +1,4 @@
-import react from 'react'
+
 import { useState } from 'react'
 
 const Login=()=>{
@@ -16,7 +16,7 @@ const Login=()=>{
         <div className="FrontContent">
       <h1>Login</h1>
       <p>Enter your credentials to access your account.</p> 
-      <form>
+      <form onSubmit={handleSubmit} style={{display:'flex',flexDirection:'column',alignItems:'center',maxWidth:'300px',margin:'0 auto'}}>
         <input type='email' placeholder='Email' value={email} onChange={(e)=>setemail(e.target.value)} style={{marginTop:'15px',padding:'10px 20px',borderRadius:'8px',border:'1px solid #ccc',width:'100%'}}/>
         <br/>
         <input type='password' placeholder='Password' value={password} onChange={(e)=>setpassword(e.target.value)} style={{marginTop:'15px',padding:'10px 20px',borderRadius:'8px',border:'1px solid #ccc',width:'100%'}}/>

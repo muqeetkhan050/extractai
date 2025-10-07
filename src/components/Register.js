@@ -1,42 +1,52 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Register = () => {
-  // Step 2.1: Create state for form inputs
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [message, setMessage] = useState("");
 
-  // Step 2.2: Handle form submission
-  const handleRegister = (e) => {
-    e.preventDefault(); // prevent page reload
-    // For now, just log the values
-    console.log({ username, email, password });
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:5000/api/auth/register", form);
+      setMessage(res.data.message);
+    } catch (err) {
+      setMessage(err.response?.data?.message || "Error occurred");
+    }
   };
 
   return (
     <div className="register-container">
       <h2>Register</h2>
-      <form onSubmit={handleRegister}>
+      <form onSubmit={handleSubmit} className="register-form">
         <input
           type="text"
+          name="name"
           placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={form.name}
+          onChange={handleChange}
         />
         <input
           type="email"
+          name="email"
           placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={form.email}
+          onChange={handleChange}
         />
         <input
           type="password"
+          name="password"
           placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={form.password}
+          onChange={handleChange}
         />
         <button type="submit">Register</button>
       </form>
+      {message && <p>{message}</p>}
     </div>
   );
 };
