@@ -12,7 +12,7 @@ app.use(cors())
 const authRoutes = require("./routes/auth");
 app.use("/api/auth", authRoutes);
 
-mongoose.connect(process.env.MONGO_URLI,{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true, useUnifiedTopology: true })
 .then(()=>console.log('MongoDB connected'))
 .catch(err=>console.log(err))
 
