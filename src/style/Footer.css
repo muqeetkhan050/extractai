@@ -1,0 +1,114 @@
+/* Footer.css */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(220, 38, 38, 0.08);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Logo Styles */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logo-text {
+  color: #1f2937;
+  transition: color 0.3s ease;
+}
+
+.logo-ai {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footer-logo:hover .logo-text {
+  color: white;
+}
+
+.footer-logo:hover .logo-ai {
+  color: white;
+}
+
+
+.footer-credit {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.footer-credit p {
+  font-size: 14px;
+  color: #3b1919;
+  font-weight: 500;
+  margin: 0;
+}
+
+.developer-name {
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-credit:hover .developer-name {
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 10px 20px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-logo {
+    font-size: 20px;
+  }
+
+  .footer-credit {
+    position: static;
+    transform: none;
+  }
+
+  .footer-credit p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 10px 16px;
+  }
+
+  .footer-logo {
+    font-size: 18px;
+  }
+
+  .footer-credit p {
+    font-size: 11px;
+  }
+}

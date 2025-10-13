@@ -1,0 +1,130 @@
+/* Header.css */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(220, 38, 38, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Styles */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logo-text {
+  color: #1f2937;
+  transition: color 0.3s ease;
+}
+
+.logo-ai {
+  color: #dc2626;
+  transition: color 0.3s ease;
+}
+
+.header-logo:hover .logo-text {
+  color: #dc2626;
+}
+
+.header-logo:hover .logo-ai {
+  color: #b91c1c;
+}
+
+/* GitHub Button Styles */
+.github-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: transparent;
+  color: #1f2937;
+  border: 2px solid #dc2626;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+.github-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.github-button:hover {
+  background: #dc2626;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.github-button:hover .github-icon {
+  transform: rotate(360deg);
+}
+
+.github-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 10px 20px;
+  }
+
+  .header-logo {
+    font-size: 20px;
+  }
+
+  .github-button {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+
+  .github-button span {
+    display: none;
+  }
+
+  .github-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 10px 16px;
+  }
+
+  .header-logo {
+    font-size: 18px;
+  }
+
+  .github-button {
+    padding: 6px 10px;
+  }
+}
